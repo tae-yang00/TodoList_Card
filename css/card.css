@@ -1,0 +1,70 @@
+.card {
+    width: 350px;
+    height: 510px;
+    perspective: 1000px; /*3d 공간의 깊이*/
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1s; /* 서서히 변화*/
+    transform-style: preserve-3d; /*3d 공간 묘사*/
+}
+
+.front,
+.back {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front {
+    background-image: url(../img/dfdffd.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+    padding: 60px 40px;
+}
+
+.front h2 {
+    font-weight: 500;
+}
+
+.front p {
+    color: #ccc;
+    font-size: 13px;
+}
+
+.front button {
+    width: 120px;
+    border: 1px solid #fff;
+    background: transparent;
+    border-radius: 50px;
+    padding: 8px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    color: #fff;
+}
+.back {
+    background: #fff;
+    color: #333;
+    padding: 30px 40px;
+    overflow: auto;
+    transform: rotateY(180deg);
+}
+.back img {
+    width: 30px;
+}
+.name_wrap {
+    display: flex;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg); /*180도 뒤집어서 뒷면 보이게*/
+}
